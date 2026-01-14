@@ -1,0 +1,56 @@
+<SynthosUI>:
+    orientation: "vertical"
+    padding: 20
+    spacing: 15
+
+    Label:
+        text: "S Y N T H O S"
+        font_size: "32sp"
+        bold: True
+        color: 0.3, 0.6, 1, 1
+        size_hint_y: 0.15
+
+    Label:
+        text: root.status_text
+        font_size: "18sp"
+        color: 1, 1, 1, 1
+        size_hint_y: 0.1
+
+    Widget:
+        size_hint_y: 0.05
+
+    # Voice Assistant Circle
+    BoxLayout:
+        size_hint_y: 0.4
+        padding: 10
+
+        Widget:
+
+        Label:
+            id: voice_circle
+            size_hint: None, None
+            size: 180, 180
+            canvas.before:
+                Color:
+                    rgba: 0.15, 0.45, 1, self.opacity
+                Ellipse:
+                    pos: self.pos
+                    size: self.size
+
+        Widget:
+
+    BoxLayout:
+        size_hint_y: 0.2
+        spacing: 10
+
+        Button:
+            text: "🎤 Voice"
+            on_press: root.start_voice()
+
+        Button:
+            text: "🔓 Authenticate"
+            on_press: root.fake_auth()
+
+        Button:
+            text: "🧠 Memory"
+            on_press: root.view_memory()
