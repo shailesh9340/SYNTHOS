@@ -1,0 +1,2 @@
+# SYNTHOS
+SYNTHOS AI Desktop App (PyQt5)
